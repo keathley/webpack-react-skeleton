@@ -1,0 +1,40 @@
+{
+  "name": "webpack-react-skeleton",
+  "version": "1.0.0",
+  "description": "Keathley's skeleton for building apps with react and webpack",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keathley/webpack-react-skeleton.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "skeleton"
+  ],
+  "author": "Chris Keathley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keathley/webpack-react-skeleton/issues"
+  },
+  "homepage": "https://github.com/keathley/webpack-react-skeleton",
+  "dependencies": {
+    "react": "^0.13.1",
+    "react-router": "^0.13.2"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^1.2.0",
+    "babel-core": "^5.1.10",
+    "babel-loader": "^5.0.0",
+    "css-loader": "^0.9.1",
+    "extract-text-webpack-plugin": "^0.5.0",
+    "node-sass": "^2.1.1",
+    "pushstate-server": "^1.6.0",
+    "sass-loader": "^0.6.0",
+    "style-loader": "^0.9.0",
+    "webpack": "^1.7.3"
+  }
+}
