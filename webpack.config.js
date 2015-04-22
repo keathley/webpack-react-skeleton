@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  debug: true,
+  devtool: '!inline-source-map',
   entry: {
     app: './app/index.jsx',
     vendor: ['react', 'react-router']
