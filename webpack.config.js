@@ -1,29 +1,33 @@
-var webpack = require('webpack');
+var webpack = require('webpack')
+  , path = require('path');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  debug: true,
-  devtool: '!inline-source-map',
+  devtool: 'eval!inline-source-map',
   entry: {
-    app: './app/index.jsx',
-    vendor: ['react', 'react-router']
+    app: [
+      'webpack-dev-server/client?http://0.0.0.0:3000',
+      'webpack/hot/only-dev-server',
+      './app/index.jsx'
+    ]
   },
   output: {
-    path: __dirname + '/public',
-    filename: "[name].js",
-    chunkFilename: "[id].js"
+    path: __dirname + '/dist',
+    filename: "bundle.js",
+    publicPath: '/static'
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loaders: [ 'babel']
       },
       {
         test: /\.jsx$/,
-        loader: 'babel-loader'
+        loaders: [ 'react-hot', 'babel'],
+        include: path.join(__dirname, 'app')
       },
       {
         test: /\.scss$/,
@@ -37,6 +41,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 };

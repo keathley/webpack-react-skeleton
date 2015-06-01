@@ -1,9 +1,9 @@
 var React = require('react')
-  , Router = require('react-router')
+  , Router = require('react-router');
 
-var Hello = require('./components/Hello.jsx')
+var Hello = require('./components/Hello.jsx');
 
-require('./styles/index.scss')
+require('./styles/index.scss');
 
 var App = React.createClass({
   render() {
@@ -12,7 +12,7 @@ var App = React.createClass({
         <h1>NEW APP</h1>
         <Router.RouteHandler {...this.props} />
       </main>
-    )
+    );
   }
 });
 
@@ -24,4 +24,4 @@ var routes = (
 
 Router.run(routes, Router.HistoryLocation, (Handler, state) => {
   React.render(<Handler/>, document.body);
-})
+});
