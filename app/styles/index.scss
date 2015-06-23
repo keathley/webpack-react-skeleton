@@ -1,4 +1,7 @@
-html, body {
-  padding: 0;
-  margin: 0;
-}
+@import "~normalize.css/normalize.css";
+
+@import "variables";
+
+@import "base/body";
+@import "base/sizing";
+@import "base/fonts";

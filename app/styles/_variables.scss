@@ -1,0 +1,26 @@
+// Breaks
+$breakpoints: (
+  large: 48em
+);
+
+// Body
+$background-color: #fff;
+
+// Typography
+$base-font-size: 18px;
+$base-font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+$base-line-height: 150%;
+$base-color: #424242;
+
+$p-font-sizes: (
+  null  : $base-font-size,
+  large : ($base-font-size * 1.4)
+);
+
+$p-line-heights: (
+  null  : $base-line-height,
+  large : $base-line-height
+);
+
+// Links
+$link-color: #DF2050;

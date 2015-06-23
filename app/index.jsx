@@ -1,20 +1,10 @@
 var React = require('react')
   , Router = require('react-router');
 
-var Hello = require('./components/Hello.jsx');
+var App = require('./components/App')
+  , Hello = require('./components/Hello')
 
 require('./styles/index.scss');
-
-var App = React.createClass({
-  render() {
-    return (
-      <main className="app">
-        <h1>NEW APP</h1>
-        <Router.RouteHandler {...this.props} />
-      </main>
-    );
-  }
-});
 
 var routes = (
   <Router.Route name="app" path="/" handler={App}>

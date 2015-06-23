@@ -4,7 +4,8 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'eval!inline-source-map',
+  debug: true,
+  devtool: 'inline-source-map',
   entry: {
     app: [
       'webpack-dev-server/client?http://0.0.0.0:3000',
@@ -32,8 +33,11 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader!autoprefixer-loader!sass-loader'
+          'style',
+          'css?sourceMap!'
+          + 'autoprefixer!'
+          + 'ruby-sass?sourceMap&'
+            + 'outputStyle=expanded'
         )
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' }
@@ -43,5 +47,9 @@ module.exports = {
     new ExtractTextPlugin('[name].css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-  ]
+  ],
+  resolve: {
+    modulesDirectories: [ 'app', 'app/styles/components', 'node_modules' ],
+    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
+  }
 };
