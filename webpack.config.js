@@ -1,5 +1,9 @@
 var webpack = require('webpack')
-  , path = require('path');
+  , path = require('path')
+  , node_modules = path.resolve(__dirname, 'node_modules')
+  , reactPath = path.resolve(node_modules, 'react/dist/react.min.js')
+  , reactRouterPath = path.resolve(node_modules, 'react-router/umd/ReactRouter.min.js')
+  , reactLibPath = path.resolve(node_modules, 'react/lib');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -28,6 +32,7 @@ module.exports = {
       {
         test: /\.jsx$/,
         loaders: [ 'react-hot', 'babel'],
+        exclude: /node_modules/,
         include: path.join(__dirname, 'app')
       },
       {
@@ -41,7 +46,8 @@ module.exports = {
         )
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' }
-    ]
+    ],
+    noParse: [reactPath, reactRouterPath, reactLibPath]
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
@@ -50,6 +56,12 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: [ 'app', 'app/styles/components', 'node_modules' ],
-    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
+    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss'],
+    alias: {
+      'react/lib': reactLibPath,
+      'react': reactPath,
+      'react-router': reactRouterPath
+
+    }
   }
 };
