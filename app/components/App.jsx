@@ -1,7 +1,11 @@
+'use strict';
+
 var React = require('react')
   , Router = require('react-router')
 
-require('App.scss');
+var Hello = require('./Hello.jsx')
+
+// require('../styles/index.scss');
 
 var App = React.createClass({
   render() {
@@ -12,6 +16,16 @@ var App = React.createClass({
       </main>
     );
   }
+});
+
+var routes = (
+  <Router.Route name="app" path="/" handler={App}>
+    <Router.DefaultRoute handler={Hello} />
+  </Router.Route>
+);
+
+Router.run(routes, Router.HistoryLocation, (Handler, state) => {
+  React.render(<Handler/>, document.body);
 });
 
 module.exports = App;

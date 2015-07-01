@@ -1,67 +1,29 @@
-var webpack = require('webpack')
-  , path = require('path')
+var webpack      = require('webpack')
+  , path         = require('path')
   , node_modules = path.resolve(__dirname, 'node_modules')
-  , reactPath = path.resolve(node_modules, 'react/dist/react.min.js')
-  , reactRouterPath = path.resolve(node_modules, 'react-router/umd/ReactRouter.min.js')
-  , reactLibPath = path.resolve(node_modules, 'react/lib');
+  , pathToReact  = path.resolve(node_modules, 'react/dist/react.min.js')
+  , pathToLib    = path.resolve(node_modules, 'react/lib')
+  // , pathToRouter = path.resolve(node_modules, 'react-router/umd/ReactRouter.min.js')
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  debug: true,
-  devtool: 'inline-source-map',
-  entry: {
-    app: [
-      'webpack-dev-server/client?http://0.0.0.0:3000',
-      'webpack/hot/only-dev-server',
-      './app/index.jsx'
-    ]
+  entry: [ 'webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js') ],
+  resolve: {
+    // alias: {
+    //   'react/lib': pathToLib,
+    //   'react': pathToReact
+    // }
   },
   output: {
-    path: __dirname + '/dist',
-    filename: "bundle.js",
-    publicPath: '/static'
+    path: path.resolve(__dirname, 'build'),
+    filename: "bundle.js"
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [ 'babel']
-      },
-      {
-        test: /\.jsx$/,
-        loaders: [ 'react-hot', 'babel'],
-        exclude: /node_modules/,
-        include: path.join(__dirname, 'app')
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(
-          'style',
-          'css?sourceMap!'
-          + 'autoprefixer!'
-          + 'ruby-sass?sourceMap&'
-            + 'outputStyle=expanded'
-        )
-      },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
-    ],
-    noParse: [reactPath, reactRouterPath, reactLibPath]
-  },
-  plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
-  resolve: {
-    modulesDirectories: [ 'app', 'app/styles/components', 'node_modules' ],
-    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss'],
-    alias: {
-      'react/lib': reactLibPath,
-      'react': reactPath,
-      'react-router': reactRouterPath
-
-    }
+    loaders: [{
+      test: /\.jsx?$/,
+      loader: 'babel'
+    }]//,
+    // noParse: [ pathToLib, pathToReact ]//pathToLib, pathToReact] //, pathToRouter ]
   }
 };
