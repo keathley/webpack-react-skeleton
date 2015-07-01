@@ -2,7 +2,7 @@ var React = require('react')
   , Router = require('react-router');
 
 var App = require('./components/App')
-  , Hello = require('./components/Hello');
+  , Hello = require('./components/Hello')
 
 require('./styles/index.scss');
 
