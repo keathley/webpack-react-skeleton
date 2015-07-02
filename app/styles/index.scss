@@ -1,7 +1,9 @@
-@import "~normalize.css/normalize.css";
+@import "base/normalize";
 
 @import "variables";
 
 @import "base/body";
 @import "base/sizing";
 @import "base/fonts";
+
+@import "components/app";
