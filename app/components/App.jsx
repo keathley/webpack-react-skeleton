@@ -1,8 +1,6 @@
 var React = require('react')
   , Router = require('react-router')
 
-require('App.scss');
-
 var App = React.createClass({
   render() {
     return (

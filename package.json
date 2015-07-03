@@ -23,23 +23,20 @@
   },
   "homepage": "https://github.com/keathley/webpack-react-skeleton",
   "dependencies": {
-    "normalize.css": "^3.0.3",
-    "react": "^0.13.1",
+    "react": "^0.13.3",
     "react-router": "^0.13.2"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^1.2.0",
+    "autoprefixer-loader": "^2.0.0",
     "babel-core": "^5.1.10",
     "babel-loader": "^5.0.0",
-    "css-loader": "^0.9.1",
-    "extract-text-webpack-plugin": "^0.5.0",
-    "node-sass": "^2.1.1",
-    "pushstate-server": "^1.6.0",
+    "css-loader": "^0.15.1",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "node-sass": "^3.2.0",
     "react-hot-loader": "^1.2.7",
-    "ruby-sass-loader": "^0.2.0",
-    "sass-loader": "^0.6.0",
-    "style-loader": "^0.9.0",
-    "webpack": "^1.7.3",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.1",
     "webpack-dev-server": "^1.9.0"
   }
 }

@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   debug: true,
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   entry: {
     app: [
       'webpack-dev-server/client?http://0.0.0.0:3000',
@@ -21,12 +21,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [ 'babel']
-      },
-      {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         loaders: [ 'react-hot', 'babel'],
         include: path.join(__dirname, 'app')
       },
@@ -36,11 +31,10 @@ module.exports = {
           'style',
           'css?sourceMap!'
           + 'autoprefixer!'
-          + 'ruby-sass?sourceMap&'
+          + 'sass?sourceMap&'
             + 'outputStyle=expanded'
         )
-      },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      }
     ]
   },
   plugins: [
@@ -50,6 +44,6 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: [ 'app', 'app/styles/components', 'node_modules' ],
-    extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']
+    extensions: ['', '.js', '.json', '.jsx']
   }
 };
