@@ -1,5 +1,9 @@
-var webpack = require('webpack')
-  , path = require('path');
+var webpack        = require('webpack')
+  , path           = require('path')
+  , autoprefixer   = require('autoprefixer-core')
+  , csswring       = require('csswring')
+  , postcss_import = require('postcss-import')
+  , postcss_vars   = require('postcss-simple-vars')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -22,23 +26,28 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: [ 'react-hot', 'babel'],
+        loaders: [ 'react-hot', 'babel' ],
         include: path.join(__dirname, 'app')
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(
-          'style',
-          'css?sourceMap!'
-          + 'autoprefixer!'
-          + 'sass?sourceMap&'
-            + 'outputStyle=expanded'
-        )
+        test: /\.css$/,
+        loader: 'style!css!postcss'
+        // loader: ExtractTextPlugin.extract( 'css!postcss' )
       }
     ]
   },
+  postcss: function() {
+    return [
+      postcss_import({
+        onImport: function(files) { files.forEach(this.addDependency) }.bind(this)
+      })
+      , postcss_vars
+      , autoprefixer
+      , csswring
+    ]
+  },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    // new ExtractTextPlugin('[name].css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
