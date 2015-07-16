@@ -1,0 +1,34 @@
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-color;
+  font-feature-settings: "kern", "liga", "pnum";
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 { margin-bottom: 0.5rem; }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1rem; }
+
+blockquote { font-size: 1.5rem; }
+
+p {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+p + h1,
+p + h2,
+p + h3,
+p + h4 { margin-top: 2rem; }
+
+a { text-decoration: none; }

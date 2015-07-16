@@ -4,7 +4,7 @@ var React = require('react')
 var App = require('./components/App')
   , Hello = require('./components/Hello')
 
-require('./styles/index.scss');
+require('./styles/index.css');
 
 var routes = (
   <Router.Route name="app" path="/" handler={App}>
