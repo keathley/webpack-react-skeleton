@@ -1,9 +1,11 @@
 var React = require('react');
 
+require('styles/components/hello')
+
 var Hello = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className='hello'>
         <h2>Hello New React App</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do

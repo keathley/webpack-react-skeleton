@@ -5,7 +5,8 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -29,22 +30,24 @@
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "autoprefixer-loader": "^2.0.0",
-    "babel-core": "^5.6.20",
-    "babel-loader": "^5.3.1",
-    "css-loader": "^0.15.3",
+    "babel-core": "^5.7.2",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.15.4",
     "csswring": "^3.0.5",
     "extract-text-webpack-plugin": "^0.8.2",
-    "node-sass": "^3.2.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.0",
+    "postcss-calc": "^4.1.0",
+    "postcss-custom-media": "^4.1.0",
     "postcss-import": "^6.1.1",
     "postcss-inline-comment": "^1.0.4",
     "postcss-loader": "^0.5.1",
     "postcss-mixins": "^0.3.0",
     "postcss-nested": "^0.3.2",
     "postcss-simple-vars": "^0.3.0",
-    "precss": "^0.2.2",
     "react-hot-loader": "^1.2.8",
-    "sass-loader": "^1.0.2",
     "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
     "webpack": "^1.10.1",
     "webpack-dev-server": "^1.9.0"
   }
