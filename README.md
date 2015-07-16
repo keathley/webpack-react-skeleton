@@ -4,10 +4,10 @@ This is just the basic skeleton that I use to create a new react apps.  I've inc
 
 * React
 * Webpack
-* Sass (see section below)
+* PostCSS
 * React-Router
 * Babel support
-* Pushstate-server
+* Hot reloading and push state
 
 and more!
 
@@ -21,18 +21,19 @@ To get started you just need to run the following:
 
 Running `npm start` will start webpack and the webpack hot reload server.
 
+## Production Builds
+
+If you want to deploy your assets then run this:
+
+    $ npm run deploy
+    
+You'll now have a minified and hashed version of all of your assets.  By default vendor files and css are split out of the main bundle and cached separately.  If you add more vendor files and want them to be split out then make sure you add them to the vendor entrypoint.
+
 ## Todo
 
 * Create a better folder structure
 * Add testing framework
 * Choose a flux framework to include
-* Convert to node-sass
-
-## Sass loaders
-
-We are currently using the ruby-sass-loader because it is more full featured
-then the node-sass implementation.  Once the node-sass loader catches up we will
-be moving to that.
 
 ## Contributing
 
