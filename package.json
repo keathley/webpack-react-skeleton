@@ -20,7 +20,7 @@
     "skeleton"
   ],
   "author": "Chris Keathley",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/keathley/webpack-react-skeleton/issues"
   },
