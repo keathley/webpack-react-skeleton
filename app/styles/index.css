@@ -2,6 +2,6 @@
 
 @import "variables";
 
-@import "base/body";
 @import "base/sizing";
+@import "base/body";
 @import "base/fonts";

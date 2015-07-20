@@ -1,6 +1,13 @@
-body {
+html {
   font-family: $base-font-family;
   font-size: $base-font-size;
+
+  @media (min-width: $screen-lg) {
+    font-size: calc($base-font-size * 1.1);
+  }
+}
+
+body {
   line-height: $base-line-height;
   color: $base-color;
   font-feature-settings: "kern", "liga", "pnum";
@@ -11,7 +18,10 @@ body {
 h1,
 h2,
 h3,
-h4 { margin-bottom: 0.5rem; }
+h4 {
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
 
 h1 { font-size: 2rem; }
 h2 { font-size: 1.7rem; }

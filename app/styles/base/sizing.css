@@ -1,4 +1,12 @@
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html,
+body { margin: 0; }
+
+body { padding: 2rem 1.5rem; }
 
 *,
 *:before,
