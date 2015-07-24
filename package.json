@@ -4,7 +4,7 @@
   "description": "Keathley's skeleton for building apps with react and webpack",
   "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --single-run",
     "lint": "eslint app",
     "start": "node server.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.config.js"

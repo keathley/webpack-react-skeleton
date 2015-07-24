@@ -4,10 +4,9 @@ import App from '../App'
 import Router from 'react-router'
 import { routes } from '../../routes'
 
-var { renderIntoDocument } = React.addons.TestUtils
-  , TestLocation = Router.TestLocation
+var TestLocation = Router.TestLocation
 
-describe('app', () => {
+describe('App', () => {
   it('renders', () => {
     var location = new TestLocation(['/'])
     var div = document.createElement('div')
