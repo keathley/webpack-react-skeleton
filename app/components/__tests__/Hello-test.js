@@ -1,4 +1,5 @@
 import React, { render } from 'react/addons'
+import dom from 'react-dom'
 import expect from 'expect'
 import Hello from '../Hello'
 
@@ -10,7 +11,7 @@ describe('Hello Component', () => {
 
   beforeEach(() => {
     hello = renderIntoDocument(<Hello />)
-    node = hello.getDOMNode()
+    node = dom.findDOMNode(hello)
   })
 
   it('has some initial text', () => {
