@@ -1,7 +1,0 @@
-@import "../variables";
-
-.app {
-  max-width: $screen-lg;
-  margin-right: auto;
-  margin-left: auto;
-}

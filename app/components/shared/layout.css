@@ -1,0 +1,7 @@
+.large { max-width: 42rem; }
+
+.centered {
+  composes: large;
+  margin-right: auto;
+  margin-left: auto;
+}

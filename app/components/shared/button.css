@@ -1,0 +1,29 @@
+.common {
+  composes: bordered dark rounded from "./borders.css";
+  composes: white from "./backgrounds.css";
+  composes: regular normal from "./typography.css";
+
+  padding: 0.75rem 1rem;
+}
+
+
+.common + .common { margin-left: 0.5rem; }
+
+.normal {
+  composes: common;
+}
+
+
+.primary {
+  composes: common;
+  composes: blue from "./backgrounds.css";
+  composes: white from "./typography.css";
+  composes: blue from "./borders.css";
+}
+
+.danger {
+  composes: common;
+  composes: red from "./borders.css";
+  composes: red from "./backgrounds.css";
+  composes: white from "./typography.css";
+}

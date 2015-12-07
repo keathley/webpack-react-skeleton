@@ -1,0 +1,12 @@
+.black { border-color: #555; }
+.gray  { border-color: #ddd; }
+.dark  { border-color: #bfbfbf; }
+.red   { border-color: #b42e2e; }
+.blue  { border-color: #189AC3; }
+
+.bordered {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.rounded { border-radius: 0.2rem; }
