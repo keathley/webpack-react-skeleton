@@ -1,17 +1,17 @@
-var React = require('react')
-  , Router = require('react-router')
+import React from 'react'
 
-require('styles/components/app.css')
+import { app } from './app.css'
+import { mastHead } from './shared/typography'
 
-var App = React.createClass({
+const App = React.createClass({
   render() {
     return (
-      <main className="app">
-        <h1>NEW APP</h1>
-        <Router.RouteHandler {...this.props} />
+      <main className={ app }>
+        <h1 className={ mastHead }>Test Application</h1>
+        {this.props.children}
       </main>
     );
   }
 });
 
-module.exports = App;
+export default App

@@ -1,0 +1,25 @@
+@import "normalize.css/normalize";
+
+.index {
+  composes: base from "./components/shared/typography.css";
+}
+
+/* Box Sizing */
+
+html { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body {
+  font-feature-settings: "kern", "liga", "pnum";
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}

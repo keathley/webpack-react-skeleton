@@ -1,12 +1,11 @@
-'use strict'
-
-var React = require('react')
-  , Router = require('react-router')
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router } from 'react-router'
 import { routes } from './routes'
 
-require('./styles/index.css')
+import './index.css'
 
-Router.run(routes, Router.HistoryLocation, (Handler) => {
-  React.render(<Handler />, document.body)
-})
+ReactDOM.render(
+  <Router>{routes}</Router>
+, document.getElementById('app')
+)

@@ -1,0 +1,3 @@
+.app {
+  composes: centered from "./shared/layout.css";
+}

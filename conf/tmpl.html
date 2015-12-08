@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="app.{%=o.webpack.hash%}.css" media="all">
     {% } %}
   </head>
-  <body class="site">
+  <body class="index">
+    <div id='app'></div>
     {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
     <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
     {% } %}

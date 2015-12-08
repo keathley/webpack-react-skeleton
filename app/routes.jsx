@@ -1,11 +1,11 @@
 import React from 'react'
-import Router from 'react-router'
+import { Route } from 'react-router'
 
 import App from './components/App'
 import Hello from './components/Hello'
 
-export var routes = (
-  <Router.Route name="app" path="/" handler={App}>
-    <Router.DefaultRoute handler={Hello} />
-  </Router.Route>
+export const routes = (
+  <Route component={App}>
+    <Route path="/" component={Hello} />
+  </Route>
 )

@@ -1,0 +1,5 @@
+.hello {
+  composes: gray from "./shared/backgrounds.css";
+  composes: bordered rounded gray from "./shared/borders.css";
+  padding: 1rem;
+}
