@@ -75,7 +75,6 @@ module.exports = {
       production: isProd
     })
   ] : [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       title: package.name,
