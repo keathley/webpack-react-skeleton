@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-skeleton",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "Keathley's skeleton for building apps with react and webpack",
   "main": "bundle.js",
   "scripts": {
