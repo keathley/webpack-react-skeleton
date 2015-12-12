@@ -1,8 +1,10 @@
 .white { color: #fff; }
-.black { color: #222; }
-.dark-text { color: #222; }
+.primary { color: #222; }
+.subtle { color: rgba(0, 0, 0, 0.6); }
 
-.line-height { line-height: 1.4; }
+.subtle-hover:hover { color: rgba(0, 0, 0, 0.8); }
+
+.line-height { line-height: 1.5; }
 
 .light  { font-weight: 200; }
 .normal { font-weight: 400; }
@@ -20,17 +22,17 @@
 .center { text-align: center; }
 
 .text {
-  composes: regular line-height light black;
+  composes: regular line-height light primary;
   margin: 0 0 1.25rem;
 }
 
 .title {
-  composes: heavy medium black;
+  composes: heavy medium primary;
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }
 
 .mastHead {
-  composes: heavy large center black;
+  composes: heavy large center primary;
   margin-bottom: 4rem;
 }

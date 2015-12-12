@@ -1,12 +1,13 @@
-var isProd               = process.env.NODE_ENV === 'production'
-  , webpack              = require('webpack')
-  , path                 = require('path')
-  , autoprefixer         = require('autoprefixer')
-  , csswring             = require('csswring')
-  , mqpacker             = require('css-mqpacker')
-  , values               = require('postcss-modules-values')
-  , postcss_nested       = require('postcss-nested')
-  , package              = require('./package.json')
+var isProd         = process.env.NODE_ENV === 'production'
+  , webpack        = require('webpack')
+  , path           = require('path')
+  , autoprefixer   = require('autoprefixer')
+  , csswring       = require('csswring')
+  , mqpacker       = require('css-mqpacker')
+  , values         = require('postcss-modules-values')
+  , postcss_nested = require('postcss-nested')
+  , postcss_color  = require('postcss-color-function')
+  , package        = require('./package.json')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
   , HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -58,6 +59,7 @@ module.exports = {
     return [
         values
       , postcss_nested
+      , postcss_color
       , autoprefixer
       , mqpacker
       , csswring
@@ -65,6 +67,7 @@ module.exports = {
   }
 
 , plugins: isProd ? [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[chunkhash].js'),
@@ -75,7 +78,6 @@ module.exports = {
       production: isProd
     })
   ] : [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       title: package.name,

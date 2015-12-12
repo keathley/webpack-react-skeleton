@@ -11,6 +11,7 @@ const Hello = React.createClass({
         <h2 className={ title }>
           Hello New React App.
         </h2>
+
         <p className={ text }>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

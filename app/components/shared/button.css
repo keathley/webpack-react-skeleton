@@ -1,29 +1,31 @@
 .common {
-  composes: bordered dark rounded from "./borders.css";
-  composes: white from "./backgrounds.css";
-  composes: regular normal from "./typography.css";
-
+  composes: bordered rounded from "./borders";
+  composes: regular normal from "./typography";
+  composes: transparent from "./backgrounds";
   padding: 0.75rem 1rem;
-}
 
+  transition: all 0.1s ease;
+}
 
 .common + .common { margin-left: 0.5rem; }
 
 .normal {
   composes: common;
+  composes: subtle subtle-hover from "./typography";
+  composes: subtle subtle-hover from "./backgrounds";
+  composes: subtle subtle-hover from "./borders";
 }
-
 
 .primary {
   composes: common;
-  composes: blue from "./backgrounds.css";
-  composes: white from "./typography.css";
-  composes: blue from "./borders.css";
+  composes: white from "./typography";
+  composes: primary primary-hover from "./backgrounds";
+  composes: primary primary-hover from "./borders";
 }
 
 .danger {
   composes: common;
-  composes: red from "./borders.css";
-  composes: red from "./backgrounds.css";
-  composes: white from "./typography.css";
+  composes: white from "./typography";
+  composes: danger danger-hover from "./backgrounds";
+  composes: danger danger-hover from "./borders";
 }

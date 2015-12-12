@@ -1,4 +1,9 @@
-.white { background-color: #fff; }
-.gray  { background-color: #f7f7f7; }
-.blue  { background-color: #24b8e7; }
-.red   { background-color: #e43939; }
+.transparent { background-color: transparent; }
+.white   { background-color: #fff; }
+.primary { background-color: #2185D0; }
+.subtle  { background-color: #e0e1e2; }
+.danger  { background-color: #db2828; }
+
+.primary-hover:hover { background-color: #176dad; }
+.subtle-hover:hover  { background-color: #b0b0b0; }
+.danger-hover:hover  { background-color: #b32020; }
