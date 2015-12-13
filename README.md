@@ -1,5 +1,7 @@
 # Webpack & React - Skeleton
 
+<img src="https://travis-ci.org/keathley/webpack-react-skeleton.svg?branch=master" />
+
 This is just the basic skeleton that I use to create a new react apps.  I've included all of the things that I like:
 
 * React
