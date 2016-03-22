@@ -70,7 +70,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-    new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[chunkhash].js'),
+    new webpack.optimize.CommonsChunkPlugin('vendors', '[name].[hash].js'),
     new ExtractTextPlugin('[name].[hash].css'),
     new HtmlWebpackPlugin({
       title: package.name,
