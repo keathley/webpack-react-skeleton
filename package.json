@@ -4,10 +4,12 @@
   "description": "Keathley's skeleton for building apps with react and webpack",
   "main": "bundle.js",
   "scripts": {
+    "env": "env",
     "start": "webpack-dev-server --hot",
     "test": "mocha --require app/__tests__/test_helper.js --compilers jsx?:babel-core/register 'app/**/*_test.@(js|jsx)'",
     "test:watch": "npm run test -- --watch",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.config.js"
+    "build": "NODE_ENV=production webpack -p --config webpack.config.js",
+    "clean": "test -d dist && rm -r dist/"
   },
   "repository": {
     "type": "git",
