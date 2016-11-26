@@ -44,7 +44,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: (isProd ? [] : [ 'react-hot' ]).concat([ 'babel' ]),
+        loaders: (isProd ? [] : [ 'babel-loader' ]),
         exclude: /node_modules/
       }
     , {test: /\.css$/, loader: isProd ? extract(cssLoaders) : cssLoaders}
